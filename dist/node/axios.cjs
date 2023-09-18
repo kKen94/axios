@@ -2894,7 +2894,7 @@ const httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
           delete res.headers['content-encoding'];
         }
 
-        switch (res.headers['content-encoding']) {
+        switch ((res.headers['content-encoding'] || '').toLowerCase()) {
         /*eslint default-case:0*/
         case 'gzip':
         case 'x-gzip':
